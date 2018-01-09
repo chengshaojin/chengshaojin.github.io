@@ -1,207 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+extends base
 
-  
-  <title>Linux字符管理命令 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cut 截取所需字符-d “n”:定义分界符,即点位-f n:取第几位的字符例如：以空格符为分界符,进行第2位截取　　　cut -d “ “ -f 2 /etc/fstab　　　　以冒号为分界符，进行第1，3位截取　　　　　 cut -d “:” -f 1,3 /etc/passwdsed 通过指定的正则表达式完成指定关键字的过滤、截取、修改等操作1.关于替换：　　1).sed替换的基本语法为:">
-<meta name="keywords" content="Linux">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Linux字符管理命令">
-<meta property="og:url" content="http://yoursite.com/2018/01/09/Linux字符管理命令/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="cut 截取所需字符-d “n”:定义分界符,即点位-f n:取第几位的字符例如：以空格符为分界符,进行第2位截取　　　cut -d “ “ -f 2 /etc/fstab　　　　以冒号为分界符，进行第1，3位截取　　　　　 cut -d “:” -f 1,3 /etc/passwdsed 通过指定的正则表达式完成指定关键字的过滤、截取、修改等操作1.关于替换：　　1).sed替换的基本语法为:">
-<meta property="og:updated_time" content="2018-01-09T04:24:02.731Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux字符管理命令">
-<meta name="twitter:description" content="cut 截取所需字符-d “n”:定义分界符,即点位-f n:取第几位的字符例如：以空格符为分界符,进行第2位截取　　　cut -d “ “ -f 2 /etc/fstab　　　　以冒号为分界符，进行第1，3位截取　　　　　 cut -d “:” -f 1,3 /etc/passwdsed 通过指定的正则表达式完成指定关键字的过滤、截取、修改等操作1.关于替换：　　1).sed替换的基本语法为:">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+block head
+  if is_tag()
+    title 标签：#{page.tag} | #{config.title}
+  else if page.category
+    title 分类：#{page.category} | #{config.title}
+  else if page.year && page.month
+    title 归档：#{page.year} 年 #{page.month} 月 | #{config.title}
+  else if !page.posts
+    title #{page.title} | #{config.title}
+  else
+    title= config.title
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Linux字符管理命令" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/01/09/Linux字符管理命令/" class="article-date">
-  <time datetime="2018-01-09T04:23:18.000Z" itemprop="datePublished">2018-01-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Linux字符管理命令
-    </h1>
-  
+mixin article(post)
+  article
+    header
+      if page.posts
+        h2
+          a(href=url_for(post.path))= post.title
+      else
+        small.right
+          a(target='_blank', href=sourceOfPost(post, theme.source_url)) 查看源代码
+        h1= post.title
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>cut 截取所需字符<br>-d “n”:定义分界符,即点位<br>-f n:取第几位的字符<br>例如：以空格符为分界符,进行第2位截取<br>　　　cut -d “ “ -f 2 /etc/fstab<br>　　　　以冒号为分界符，进行第1，3位截取<br>　　　　　 cut -d “:” -f 1,3 /etc/passwd<br>sed 通过指定的正则表达式完成指定关键字的过滤、截取、修改等操作<br>1.关于替换：<br>　　1).sed替换的基本语法为: sed ‘s/原字符串/替换字符串/‘ filename<br>　　s 表示替换 特殊字符需要使用反斜线“\”进行转义，单引号是不能用反斜线转义，要用反斜线的话使用双引号。<br>　　要处理的字符串包含单引号也用双引号。<br>　　注意：在末尾加g替换每一个匹配的关键字，否则只替换每一行的第一个字符串，<br>　　# 替换所有匹配关键字<br>　　　sed ‘s/原字符串/替换字符串/g’ filename<br>　　2）三根斜线也可换成别的符号，只要紧跟s定义即可<br>　　# 将分隔符换成问号”?”:<br>　　　　sed ‘s?原字符串?替换字符串?’<br>　　注意：sed处理过的输出是直接输出到屏幕上的,使用参数”i”直接在文件中替换<br>　　3）多个替换可以在同一条命令中执行,用分号”;”分隔，其格式为:<br>　　　　# 同时执行两个替换规则<br>　　　　　sed ‘s/^/添加的头部&amp;/g；s/$/&amp;添加的尾部/g’<br>　　4）一些特殊字符的使用<br>　　　　”^”表示行首<br>　　 ”$”符号如果在引号中表示行尾，但是在引号外却表示末行(最后一行)<br>2).关于删除：<br>　　1）d 删除指定行,要在文件内删除，同样加参数i<br>　　#.删除文件的第1-3行<br>　　　　sed ‘1,3d’ filename<br>　　#删除文件的第3行到最后一行<br>　　　　sed ‘3,$d’ filename<br>　　#删除含有指定字段的行<br>　　　　sed ‘/字符/d’ filename<br>3)多点编辑<br>　　使用-e参数<br>　　#删除第1-3行，替换某字符<br>　　　　sed -e ‘1,3d’ -e ‘s/原字符/替换的字符/‘ filename<br>　　　　<br>4)文件操作<br>　　#将含有某字段的行写入新的文件中<br>　　sed -n ‘/某字段/w 新文件’ filename<br>　　#将小写改为大写<br>　　sed ‘y/小写字母/大写字母/‘ filename<br>　　<br>　　awk 通过正则表达式,得到需要的行,列信息<br>　　#查看df -h命令的第2列<br>　　　　df -h | awk ‘{print $2}’<br>　　#查看df -h命令的第2,5列<br>　　　　df -h | awk ‘{print $2,$5}’<br>　　#列示月份及年份(\n为换行符)<br>　　　　date | awk ‘{print “Year:” $6 “\nMonth:” $2}’<br>　　　　<br>　　sort 默认以排序ASCII方式进行排序[a-z]<br>　　参数:<br>　　-u 去除重复的行<br>　　-r 降序排序[z-a]<br>　　-n 数值排序,默认情况10比2小,主要因为sort判断第一字符的值<br>　　-k 以文本的列进行判断<br>　　-t 设定分界符<br>　　# 对/etc/passwd文件进行升序排序<br>　　　　sort /etc/passwd<br>　　#对/etc/passwd文件进行降序排序<br>　　　　sort -r /etc/passwd<br>　　#对/etc/passwd第3列进行数值排序,分界符为:<br>　　　　sort -n -k 3 -t : /etc/passwd<br>　　wc 统计行数、字数、字符数、文件总统计数<br>　　参数:<br>　　-l 统计行数<br>　　-c 统计字节数<br>　　-w 统计字数(单词数<br>　　uniq 检查文本中重复出现的行<br>　　-c 显示输出,并在文本行前加出现的次数,但如果<br>　　重复行不连续，则不认为是重复的行<br>　　-d 只显示重复的行<br>　　-u 只显示不重复的行<br>　　-f n前N个字段和每个字段前的空白行一起被忽略,字段从0开始编号<br>　　-s n 前N个字符被忽略,字符从0开始编号<br>　　-w n 对N个字符以后的字符不在检查重复性<br>　　tee 读取标准输入的数据，并将其内容输出成文件<br>　　说明:指令会从标准输入设备读取数据，将其内容输出到标准输出设备，同时保存成文件<br>　　参数:<br>　　-a:附加到既有文件的后面，而非覆盖它．<br>　　-i:忽略中断信号。<br>　　# 查询当前账户并写入who.txt文件中<br>　　who | tee who.txt
-　　</p>
+    .article-meta.clearfix
+      time.left= post.date.format(config.date_format)
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/09/Linux字符管理命令/" data-id="cjc74tylb000214v9gztfoaqi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+      if post.categories
+        ul.tags.left
+          - post.categories.each(function(category) {
+            li
+              a(href=url_for(category.path))= category.name
+          - });
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2018/01/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
+      if post.tags
+        ul.tags.right
+          - post.tags.each(function(tag) {
+            li
+              a(href=url_for(tag.path))= tag.name
+          - });
 
-  
-</article>
+    .markdown-body!= post.content
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+    if !page.posts && theme.duoshuo
+      .ds-thread(data-thread-key=commentKey(post), data-title=post.title, data-url=post.permalink)
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-  </div>
+  if !page.posts && post.appends
+    for append in formatArray(post.appends)
+      .article-widget
+        +widget-inter(append)
 
+block body
+  for banner in formatArray(theme.banners)
+    .article-widget
+      +widget-inter(banner)
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
-    </div>
-  </div>
+  if is_tag()
+    .article-widget
+      strong 标签 ##{page.tag}
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
-    </div>
-  </div>
+  if page.category
+    .article-widget
+      strong 分类 ##{page.category}
 
+  if page.year && page.month
+    .article-widget
+      strong 归档 #{page.year} 年 #{page.month} 月
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/01/09/Linux字符管理命令/">Linux字符管理命令</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/03/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  if page.posts
+    - page.posts.each(function(post) {
+      +article(post)
+    - });
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    .archive-pagination
+      .paginator!= fixPaginator(paginator({prev_text: '&laquo;', next_text: '&raquo;'}))
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
-</body>
-</html>
+  else
+    +article(page)
