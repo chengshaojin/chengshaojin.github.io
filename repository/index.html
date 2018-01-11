@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2018/1 | Shaojin&#39;s Words</title>
+  <title>Repositories | Shaojin&#39;s Words</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Shaojin&#39;s Words">
-<meta property="og:url" content="http://yoursite.com/archives/2018/01/index.html">
+<meta property="og:title" content="Repositories">
+<meta property="og:url" content="http://yoursite.com/repository/index.html">
 <meta property="og:site_name" content="Shaojin&#39;s Words">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-11T01:30:26.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shaojin&#39;s Words">
+<meta name="twitter:title" content="Repositories">
   
     <link rel="alternate" href="/atom.xml" title="Shaojin&#39;s Words" type="application/atom+xml">
   
@@ -68,40 +69,47 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/09/Linux字符管理命令/" class="archive-article-date">
-  <time datetime="2018-01-09T04:23:18.000Z" itemprop="datePublished">Jan 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/09/Linux字符管理命令/">Linux字符管理命令</a>
-    </h1>
-  
-
-    </header>
+        <section id="main"><main class="main" role="main">
+  <article class="article article-repository article-type-list" itemscope="">
+  <header class="article-header">
+    <h1 itemprop="title">Repositories</h1>
+    <p class="text-muted">I have <span id="repo-count">0</span> projects on Github</p>
+  </header>
+  <div class="article-body">
+    <div class="repo-content">
+      <div class="blankslate">
+        <p>正在加载...</p>
+      </div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
+
+
+<!--Github项模版-->
+<script type="text/template" id="list-template">
+  <li class="col-sm-6 col-md-6 col-lg-4">
+    <div class="repo hover-shadow hover-grow">
+      <div class="repo-image geopattern" data-pattern-id="{%=name%}"></div>
+      <h3 class="repo-title"><a href="{%=clone_url%}" target="_blank" rel="external nofollow noopener noreferrer">{%=full_name%}</a></h3>
+      <p class="repo-body">{%=description%}</p>
+      <div class="repo-meta">
+        <span class="meta meta-type pull-left" aria-label="{%=language%} project">{%=language%}</span>
+        <span class="meta meta-star" aria-label="{%=stargazers_count%} stars"><i class="icon icon-star-fill"></i> {%=stargazers_count%}</span>
+        <span class="meta meta-fork" aria-label="{%=forks_count%} forks"><i class="icon icon-code-fork"></i> {%=forks_count%}</span>
+        <span class="meta meta-last-updated" aria-label="最后更新时间：{%=updated_at%}">
+        <i class="icon icon-clock"></i> <time datetime="{%=updated_at%}">{%=updated_at%}</time></span>
+      </div>
+    </div>
+  </li>
+</script>
+<!--获取失败模版-->
+<script type="text/template" id="error-template">
+  <h3>加载失败</h3><p>请刷新或稍后再试...</p>
+</script>
+</main>
 </section>
         
           <aside id="sidebar">

@@ -3,8 +3,6 @@
 <head>
   <meta charset="utf-8">
   
-
-  
   <title>Linux字符管理命令 | Shaojin&#39;s Words</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="cut 截取所需字符-d “n”:定义分界符,即点位-f n:取第几位的字符1234例如：以空格符为分界符,进行第2位截取 　　　cut -d &quot; &quot; -f 2 /etc/fstab　　　　以冒号为分界符，进行第1，3位截取　　　cut -d &quot;:&quot; -f 1,3 /etc/passwd sed 通过指定的正则表达式完成指定关键字的过滤、截取、修改等操作1.关于替换：　　1).sed替换的基本语法">
@@ -14,6 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/01/09/Linux字符管理命令/index.html">
 <meta property="og:site_name" content="Shaojin&#39;s Words">
 <meta property="og:description" content="cut 截取所需字符-d “n”:定义分界符,即点位-f n:取第几位的字符1234例如：以空格符为分界符,进行第2位截取 　　　cut -d &quot; &quot; -f 2 /etc/fstab　　　　以冒号为分界符，进行第1，3位截取　　　cut -d &quot;:&quot; -f 1,3 /etc/passwd sed 通过指定的正则表达式完成指定关键字的过滤、截取、修改等操作1.关于替换：　　1).sed替换的基本语法">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-01-10T01:49:29.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux字符管理命令">
@@ -22,12 +21,12 @@
     <link rel="alternate" href="/atom.xml" title="Shaojin&#39;s Words" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
-  
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
   <link rel="stylesheet" href="/css/style.css">
+  
+
 </head>
 
 <body>
@@ -46,16 +45,26 @@
       <nav id="main-nav">
         <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
+          <a class="main-nav-link" href="/.">主页</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/repository">github</a>
+        
+          <a class="main-nav-link" href="/links">友链</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
         
       </nav>
       <nav id="sub-nav">
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -101,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/01/09/Linux字符管理命令/" data-id="cjc8e07yz0001b0v95kmg5bxr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/01/09/Linux字符管理命令/" data-id="cjc9y67tx00012gv9463tbzhk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -110,16 +119,6 @@
   </div>
   
     
-<nav id="article-nav">
-  
-  
-    <a href="/2018/01/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
@@ -127,14 +126,29 @@
         
           <aside id="sidebar">
   
+    <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            
+            <p>您好，您是第<span id="busuanzi_value_site_uv">0</span>位访客</p>
+            
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
     
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -142,7 +156,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
       <a href="/tags/Linux/" style="font-size: 10px;">Linux</a>
     </div>
@@ -151,9 +165,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -161,16 +175,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
           <li>
             <a href="/2018/01/09/Linux字符管理命令/">Linux字符管理命令</a>
-          </li>
-        
-          <li>
-            <a href="/2018/01/03/hello-world/">Hello World</a>
           </li>
         
       </ul>
@@ -193,9 +203,19 @@
     </div>
     <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+    <a href="/." class="mobile-nav-link">主页</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/repository" class="mobile-nav-link">github</a>
+  
+    <a href="/links" class="mobile-nav-link">友链</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
   
 </nav>
     
@@ -203,13 +223,8 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
 
 <script src="/js/script.js"></script>
-
-
 
   </div>
 </body>
