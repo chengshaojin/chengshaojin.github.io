@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/01/18/kolla%E9%83%A8%E7%BD%B2openstack%E7%9A%84pika%E7%89%88/</loc>
+    
+    <lastmod>2018-01-18T09:29:16.104Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/01/09/Linux%E5%AD%97%E7%AC%A6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2018-01-13T12:48:43.335Z</lastmod>
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/repository/index.html</loc>
+    <loc>http://yoursite.com/links/index.html</loc>
     
     <lastmod>2018-01-11T01:30:26.385Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/links/index.html</loc>
+    <loc>http://yoursite.com/repository/index.html</loc>
     
     <lastmod>2018-01-11T01:30:26.385Z</lastmod>
     
