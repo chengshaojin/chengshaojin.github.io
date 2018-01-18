@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/01/14/openstack%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%B5%81%E5%90%91%E8%AF%A6%E8%A7%A3/</loc>
-    
-    <lastmod>2018-01-14T07:45:50.820Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2018/01/09/Linux%E5%AD%97%E7%AC%A6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2018-01-13T12:48:43.335Z</lastmod>
@@ -23,14 +16,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/links/index.html</loc>
+    <loc>http://yoursite.com/repository/index.html</loc>
     
     <lastmod>2018-01-11T01:30:26.385Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/repository/index.html</loc>
+    <loc>http://yoursite.com/links/index.html</loc>
     
     <lastmod>2018-01-11T01:30:26.385Z</lastmod>
     
