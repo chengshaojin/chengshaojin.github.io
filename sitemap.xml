@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/01/19/docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</loc>
+    
+    <lastmod>2018-01-19T09:08:09.108Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/01/18/kolla%E9%83%A8%E7%BD%B2openstack%E7%9A%84pika%E7%89%88/</loc>
     
-    <lastmod>2018-01-18T09:29:16.104Z</lastmod>
+    <lastmod>2018-01-18T09:33:22.162Z</lastmod>
     
   </url>
   
