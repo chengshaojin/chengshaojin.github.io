@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2018/03/14/openstack%E9%85%8D%E7%BD%AElvm%E4%B8%8Enfs%E7%9A%84cinder%E5%A4%9A%E5%90%8E%E7%AB%AF/</loc>
-    <lastmod>2018-03-14T09:47:54.555Z</lastmod>
+    <lastmod>2018-03-14T09:51:24.572Z</lastmod>
     <data>
         <display>
         <title>openstack配置lvm与nfs的cinder多后端</title>
@@ -15,6 +15,9 @@
          
          
            
+             
+              <breadCrumb title="技术" url="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
         </display>
     </data>
     </url>
