@@ -1,0 +1,10 @@
+http://www.chengshaojin.com/2018/04/18/用cobbler安装操作系统/
+http://www.chengshaojin.com/2018/04/11/openstack queens版本multi-attach实践/
+http://www.chengshaojin.com/2018/03/31/那些一眼就惊艳了时光的诗句/
+http://www.chengshaojin.com/2018/03/14/openstack配置lvm与nfs的cinder多后端/
+http://www.chengshaojin.com/2018/02/09/2018年春节前最后一天上班的晚上/
+http://www.chengshaojin.com/2018/01/22/docker单机环境下的网络与通信/
+http://www.chengshaojin.com/2018/01/20/docker基础（二）/
+http://www.chengshaojin.com/2018/01/19/docker基础(一)/
+http://www.chengshaojin.com/2018/01/18/kolla部署openstack的pika版/
+http://www.chengshaojin.com/2018/01/09/Linux字符管理命令/
