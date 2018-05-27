@@ -1,3 +1,4 @@
+http://www.chengshaojin.com/2018/05/27/读苏轼/
 http://www.chengshaojin.com/2018/05/17/zabbix总结/
 http://www.chengshaojin.com/2018/05/05/crush设计：SSD、SATA盘的混合使用/
 http://www.chengshaojin.com/2018/04/18/用cobbler安装操作系统/
