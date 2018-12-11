@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.chengshaojin.com/2018/12/11/kubernetes%E4%B8%ADYAML%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2018-12-11T13:14:40.970Z</lastmod>
+    <data>
+        <display>
+        <title>kubernetes中YAML文件学习</title>
+        <pubTime>2018-12-11T12:54:54.000Z</pubTime>
+        
+        <tag>kubernetes</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://www.chengshaojin.com/categories/%E6%8A%80%E6%9C%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.chengshaojin.com/2018/11/02/%E4%BD%BF%E7%94%A8kubeadm%E5%AE%89%E8%A3%85kubernetes-v1-12/</loc>
     <lastmod>2018-11-02T15:02:38.129Z</lastmod>
     <data>

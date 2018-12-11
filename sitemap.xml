@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.chengshaojin.com/2018/12/11/kubernetes%E4%B8%ADYAML%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2018-12-11T13:14:40.970Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.chengshaojin.com/2018/11/02/%E4%BD%BF%E7%94%A8kubeadm%E5%AE%89%E8%A3%85kubernetes-v1-12/</loc>
     
     <lastmod>2018-11-02T15:02:38.129Z</lastmod>
@@ -121,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://www.chengshaojin.com/links/index.html</loc>
+    <loc>http://www.chengshaojin.com/repository/index.html</loc>
     
     <lastmod>2018-01-11T01:30:26.385Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.chengshaojin.com/repository/index.html</loc>
+    <loc>http://www.chengshaojin.com/links/index.html</loc>
     
     <lastmod>2018-01-11T01:30:26.385Z</lastmod>
     
