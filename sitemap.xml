@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.chengshaojin.com/2018/12/13/kubernetes%E4%B8%ADpod%E5%AF%B9%E8%B1%A1%E5%AD%A6%E4%B9%A0/</loc>
+    
+    <lastmod>2018-12-13T13:50:26.772Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.chengshaojin.com/2018/12/11/kubernetes%E4%B8%ADYAML%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2018-12-11T13:33:10.140Z</lastmod>
