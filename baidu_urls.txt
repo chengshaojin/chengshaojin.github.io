@@ -1,3 +1,4 @@
+http://www.chengshaojin.com/2018/12/31/2018年过去了，我很怀念它/
 http://www.chengshaojin.com/2018/12/13/kubernetes中pod对象学习/
 http://www.chengshaojin.com/2018/12/11/kubernetes中YAML文件学习/
 http://www.chengshaojin.com/2018/11/02/使用kubeadm安装kubernetes-v1-12/
