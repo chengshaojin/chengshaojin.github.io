@@ -1,3 +1,4 @@
+http://www.chengshaojin.com/2019/03/01/华为交换机常用配置/
 http://www.chengshaojin.com/2018/12/31/2018年过去了，我很怀念它/
 http://www.chengshaojin.com/2018/12/13/kubernetes中pod对象学习/
 http://www.chengshaojin.com/2018/12/11/kubernetes中YAML文件学习/

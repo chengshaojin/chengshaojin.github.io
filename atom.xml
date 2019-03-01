@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.chengshaojin.com/"/>
-  <updated>2018-12-31T12:27:58.104Z</updated>
+  <updated>2019-03-01T14:30:49.781Z</updated>
   <id>http://www.chengshaojin.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>华为交换机常用配置</title>
+    <link href="http://www.chengshaojin.com/2019/03/01/%E5%8D%8E%E4%B8%BA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.chengshaojin.com/2019/03/01/华为交换机常用配置/</id>
+    <published>2019-03-01T12:06:06.000Z</published>
+    <updated>2019-03-01T14:30:49.781Z</updated>
+    
+    <content type="html"><![CDATA[<p>人在职场，身不由己，交换机不得不自己配。总结一下这些命令好了。</p><h4 id="常用查询命令"><a href="#常用查询命令" class="headerlink" title="常用查询命令"></a>常用查询命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Sys (system-view)                      进入视图模式</span><br><span class="line">Display current-configuration          查看交换机所有配置</span><br><span class="line">Interface 10GE 1/0/1                   进入10GE1/0/1端口配置模式</span><br><span class="line">Dis th                                 查看当前端口状态及配置</span><br><span class="line">Quit                                   返回上一层配置模式 </span><br><span class="line">commit                                 提交已有配置   用户模式下输入save 保存配置</span><br><span class="line">Display interface brief                查看所有端口状态</span><br><span class="line">Display interface mac-address          查看连接端口的mac地址</span><br></pre></td></tr></table></figure><h4 id="常用的配置命令"><a href="#常用的配置命令" class="headerlink" title="常用的配置命令"></a>常用的配置命令</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">interface 10GE1/0/1                    进入10GE1/0/1端口</span><br><span class="line">description link_to_controller_1_eth0  描述该端口是干嘛的</span><br><span class="line">port link-type hybrid                  配置该端口类型为hybrid口，或者trunk、access</span><br><span class="line">port hybrid tagged vlan 4 to 6 100     配置端口标签 vlan4 5 6 100的标签</span><br><span class="line">port hybrid pvid vlan 260              配置该端口的pvid vlan</span><br><span class="line">undo port hybrid untagged vlan 1       删除剥离默认vlan的tag</span><br><span class="line">port hybrid untagged vlan 260          让vlan260的帧出去不带标签</span><br></pre></td></tr></table></figure><p>解释一下上面这个端口配置的意义：<br>10GE1/0/1这是个hybrid类型的端口，当这个端口收到不带任何tag的报文的时候，就给这个报文打上 vlan 260的tag，在发出去的时候再剥离掉vlan信息发送。当收到带有tag的报文时，判断是否是vlan 4 5 6 100的tag ,如果是则直接转发，不是就丢弃。<br>假如是以下配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">interface 10GE1/0/1</span><br><span class="line">description link_to_controller_1_eth0</span><br><span class="line">port link-type trunk</span><br><span class="line">port trunk allow pass vlan 4 to 6 100</span><br><span class="line">port trunk pvid vlan 260</span><br><span class="line">undo port trunk allow pass vlan 1</span><br></pre></td></tr></table></figure></p><p>这个配置的意思就是该端口收到一个报文信息，判断是否有vlan信息，如果没有则打上pvid vlan 260 并转发，如果判断有vlan信息，则判断端口是否允许该vlan的数据进入，如果可以就转发，否则丢弃。在发送的时候如果vlan信息和pvid一样，就会剥离vlan信息再发送，不相等直接发送。</p><p>待更。。。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;人在职场，身不由己，交换机不得不自己配。总结一下这些命令好了。&lt;/p&gt;
+&lt;h4 id=&quot;常用查询命令&quot;&gt;&lt;a href=&quot;#常用查询命令&quot; class=&quot;headerlink&quot; title=&quot;常用查询命令&quot;&gt;&lt;/a&gt;常用查询命令&lt;/h4&gt;&lt;figure class=&quot;hig
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://www.chengshaojin.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="交换机" scheme="http://www.chengshaojin.com/tags/%E4%BA%A4%E6%8D%A2%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>2018年过去了，我很怀念它</title>
