@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.chengshaojin.com/"/>
-  <updated>2020-01-10T12:09:50.533Z</updated>
+  <updated>2019-08-17T13:18:48.247Z</updated>
   <id>http://www.chengshaojin.com/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>独居的一年</title>
-    <link href="http://www.chengshaojin.com/2020/01/10/%E7%8B%AC%E5%B1%85%E7%9A%84%E4%B8%80%E5%B9%B4/"/>
-    <id>http://www.chengshaojin.com/2020/01/10/独居的一年/</id>
-    <published>2020-01-10T11:40:51.000Z</published>
-    <updated>2020-01-10T12:09:50.533Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;我曾经拥有着的一切      转眼都飘散如烟</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&amp;emsp;&amp;emsp;我曾经拥有着的一切      转眼都飘散如烟&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="生活" scheme="http://www.chengshaojin.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="2019" scheme="http://www.chengshaojin.com/tags/2019/"/>
-    
-  </entry>
   
   <entry>
     <title>财务报表中的关键数据</title>
@@ -520,6 +494,31 @@
     
     
       <category term="docker" scheme="http://www.chengshaojin.com/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kolla部署openstack的pika版</title>
+    <link href="http://www.chengshaojin.com/2018/01/18/kolla%E9%83%A8%E7%BD%B2openstack%E7%9A%84pika%E7%89%88/"/>
+    <id>http://www.chengshaojin.com/2018/01/18/kolla部署openstack的pika版/</id>
+    <published>2018-01-18T08:44:28.000Z</published>
+    <updated>2018-01-18T09:33:22.162Z</updated>
+    
+    <content type="html"><![CDATA[<p>用kolla部署openstack真的是超级方便简单，想当年初识openstack的时候我可是用了两周多的时间才搭建起一套没有HA的环境，可今天下午，如果不算下载docker镜像的时间，我只用不到两小时的时间就部署起一套openstack+ceph的高可用融合型环境。kolla本身将openstack包括ceph的所用服务都容器化，所有你要启动某个服务，只需要重启该服务的容器就好了。而且kolla是唯一一个没有任何厂商背景的部署工具，完全开源，已经非常成熟了，我所在公司九州云，已经部署了n多的生产案例了，扩容按理来说应该也是比较方便的。<br>贴上同事整理的部署文档，你只需要仔细一点，按照此方法应该都是可以部署成功的，所以就不多说了。<br><a href="https://www.lijiawang.org/posts/kolla-pike-on-centos.html" target="_blank" rel="noopener">https://www.lijiawang.org/posts/kolla-pike-on-centos.html</a></p><h5 id="关于网络"><a href="#关于网络" class="headerlink" title="关于网络"></a>关于网络</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">kolla定义网络是在/etc/kolla/global.yml文件中,只需在相关网络的后面写上实际的物理网卡名字就可以了，如下：</span><br><span class="line">network_interface: <span class="string">"eno16777736"</span>   管理网</span><br><span class="line">api_interface: <span class="string">"&#123;&#123; network_interface &#125;&#125;"</span></span><br><span class="line">storage_interface: <span class="string">"&#123;&#123; network_interface &#125;&#125;"</span>   存储网</span><br><span class="line">cluster_interface: <span class="string">"&#123;&#123; network_interface &#125;&#125;"</span>   存储集群网</span><br><span class="line">tunnel_interface: <span class="string">"&#123;&#123; network_interface &#125;&#125;"</span>    </span><br><span class="line">dns_interface: <span class="string">"&#123;&#123; network_interface &#125;&#125;"</span>       vxlan网</span><br><span class="line">neutron_external_interface: <span class="string">"eno33554960"</span>      private网</span><br><span class="line">网络可以分离，也可以用同一块，但是最少应该两块网卡，因为private网络需要独立。如果你做了网卡绑定的话，就换成bond0或bond1等</span><br></pre></td></tr></table></figure><h5 id="关于节点信息"><a href="#关于节点信息" class="headerlink" title="关于节点信息"></a>关于节点信息</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">关于节点的定义信息是在multinode文件中，在此文件中你可以用hostname来定义哪些物理机是control,哪些是compute，哪些是storage，</span><br><span class="line">哪些是network等等，你可以定义openstack的服务安装在哪些节点上。如下：</span><br><span class="line">[control]</span><br><span class="line">control01</span><br><span class="line">control02</span><br><span class="line">control03</span><br><span class="line">表示control01、control02、control03是控制节点，control01、control02、control03是三个节点的hostname。</span><br><span class="line">[keystone:children]</span><br><span class="line">control</span><br><span class="line">表示keystone服务安装在所有的control节点</span><br></pre></td></tr></table></figure><h5 id="关于要安装哪些组件"><a href="#关于要安装哪些组件" class="headerlink" title="关于要安装哪些组件"></a>关于要安装哪些组件</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">这个功能也在global.yml文件中定义，如下：</span><br><span class="line">enable_barbican: <span class="string">"no"</span></span><br><span class="line">enable_ceilometer: <span class="string">"yes"</span></span><br><span class="line">enable_central_logging: <span class="string">"yes"</span></span><br><span class="line">enable_ceph: <span class="string">"yes"</span></span><br><span class="line">enable_ceph_rgw: <span class="string">"yes"</span></span><br><span class="line">enable_chrony: <span class="string">"yes"</span></span><br><span class="line">enable_cinder: <span class="string">"yes"</span></span><br><span class="line">enable_cinder_backend_hnas_iscsi: <span class="string">"no"</span></span><br><span class="line">enable_cinder_backend_hnas_nfs: <span class="string">"no"</span></span><br><span class="line">enable_cinder_backend_iscsi: <span class="string">"no"</span></span><br><span class="line">enable_cinder_backend_lvm: <span class="string">"no"</span></span><br><span class="line">enable_cinder_backend_nfs: <span class="string">"no"</span></span><br><span class="line">如果你想安装哪个组件，只需要将该组件行的注释去掉，冒号里写yes即可</span><br></pre></td></tr></table></figure><p>当这些都定义完就可以deploy了，你可以在deploy之前先prechecks下，防止一些语法错误。<br>再多说一点，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在你已经部署完成的情况下，如果要更改global.yml文件，改完以后执行以下命令：</span><br><span class="line">kolla-ansible upgrade -i multinode</span><br><span class="line">kolla-ansible post-deploy -i multinode</span><br><span class="line">如果修改了/etc/config/[server]/[server].conf文件：</span><br><span class="line">kolla-ansible reconfigure -i multinode</span><br><span class="line">如果部署失败，可以清除然后重新部署，清除的命令是：</span><br><span class="line">kolla-ansible destroy -i multinode --yes-i-really-really-mean-it</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;用kolla部署openstack真的是超级方便简单，想当年初识openstack的时候我可是用了两周多的时间才搭建起一套没有HA的环境，可今天下午，如果不算下载docker镜像的时间，我只用不到两小时的时间就部署起一套openstack+ceph的高可用融合型环境。kol
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://www.chengshaojin.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="openstack" scheme="http://www.chengshaojin.com/tags/openstack/"/>
     
   </entry>
   
